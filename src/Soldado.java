@@ -1,3 +1,4 @@
+
 public class Soldado {
     private int id;
     private String nombre;
@@ -20,23 +21,18 @@ public class Soldado {
         this.actitud = "Defensiva";
         this.vive = true;
     }
-
     public int getVidaActual() {
         return vidaActual;
     }
-
     public void setVidaActual(int vidaActual) {
         this.vidaActual = vidaActual;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public boolean estaVivo() {
         return vidaActual > 0;
     }
-
     @Override
     public String toString() {
         return nombre + " | Vida: " + vidaActual + " | Actitud: " + actitud;
