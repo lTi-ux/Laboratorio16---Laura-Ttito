@@ -1,4 +1,3 @@
-
 public class Soldado {
     private int id;
     private String nombre;
@@ -6,52 +5,40 @@ public class Soldado {
     private int nivelDefensa;
     private int nivelVida;
     private int vidaActual;
+    private int velocidad;
     private String actitud;
     private boolean vive;
-    private Reino reino;
-    
-    public Soldado(int id, String nombre, int nivelAtaque, int nivelDefensa, int nivelVida, Reino reino) {
+
+    public Soldado(int id, String nombre, int nivelAtaque, int nivelDefensa, int nivelVida, int velocidad) {
         this.id = id;
         this.nombre = nombre;
         this.nivelAtaque = nivelAtaque;
         this.nivelDefensa = nivelDefensa;
         this.nivelVida = nivelVida;
         this.vidaActual = nivelVida;
+        this.velocidad = velocidad;
         this.actitud = "Defensiva";
         this.vive = true;
-        this.reino = reino;
-    }
-    public void aplicarBonus(String territorio) {
-        if (reino.tieneBonus(territorio)) {
-            this.vidaActual += 1; // Bonus de vida
-        }
-    }
-
-    public void serAtacado(int dano) {
-        this.vidaActual -= dano;
-        if (this.vidaActual <= 0) {
-            morir();
-        }
-    }
-
-    public void morir() {
-        this.vive = false;
     }
 
     public int getVidaActual() {
-        return this.vidaActual;
+        return vidaActual;
+    }
+
+    public void setVidaActual(int vidaActual) {
+        this.vidaActual = vidaActual;
     }
 
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
 
-    public Reino getReino() {
-        return this.reino;
+    public boolean estaVivo() {
+        return vidaActual > 0;
     }
 
     @Override
     public String toString() {
-        return nombre + " | Vida: " + vidaActual;
+        return nombre + " | Vida: " + vidaActual + " | Actitud: " + actitud;
     }
 }

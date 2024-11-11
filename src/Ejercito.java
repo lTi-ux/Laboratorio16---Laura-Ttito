@@ -1,14 +1,11 @@
-
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Ejercito {
-    private int id;
     private List<Soldado> soldados;
     private Reino reino;
 
-    public Ejercito(int id, Reino reino) {
-        this.id = id;
+    public Ejercito(Reino reino) {
         this.reino = reino;
         this.soldados = new ArrayList<>();
     }
@@ -25,4 +22,3 @@ public class Ejercito {
         return reino;
     }
 }
-

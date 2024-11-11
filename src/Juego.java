@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Scanner;
+
 public class Juego {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -14,7 +15,7 @@ public class Juego {
 
             boolean ejercito1Vivo = false;
             boolean ejercito2Vivo = false;            
-            for (Ejercito ejercito : mapa.ejercitos) {
+            for (Ejercito ejercito : mapa.getEjercitos()) {
                 if (ejercito.getReino().getNombre().equals("Inglaterra") || ejercito.getReino().getNombre().equals("Francia")) {
                     if (!ejercito.getSoldados().isEmpty()) {
                         ejercito1Vivo = true;
@@ -34,7 +35,7 @@ public class Juego {
                 }
                 break; 
             }
-            for (Ejercito ejercito : mapa.ejercitos) {
+            for (Ejercito ejercito : mapa.getEjercitos()) {
                 System.out.println("\nTurno del ejército de " + ejercito.getReino().getNombre());
                 System.out.print("Ingrese la fila (1-10) y columna (A-J) de un soldado a mover: ");
                 int fila = scanner.nextInt() - 1;
@@ -51,3 +52,4 @@ public class Juego {
         scanner.close();
     }
 }
+
