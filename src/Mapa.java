@@ -76,9 +76,9 @@ public class Mapa {
             for (int j = 0; j < 10; j++) {
                 Soldado soldado = tablero[i][j];
                 if (soldado != null) {
-                    System.out.print("|" + soldado.getNombre().charAt(0) + soldado.getVidaActual() + " ");
+                    System.out.print("|" +soldado.getNombre().charAt(0) + soldado.getVidaActual() + " ");
                 } else {
-                    System.out.print("|_ ");
+                    System.out.print("|   ");
                 }
             }
             System.out.println("|");
